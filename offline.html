@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Hors ligne | Prise de décision technique</title>
+  <link rel="stylesheet" href="./css/style.css" />
+  <style>
+    body { display: grid; place-items: center; min-height: 100vh; padding: 16px; }
+    .offline { width: min(720px, 94vw); text-align: center; padding: 28px; }
+    .brand { display:inline-flex; align-items:center; gap:10px; justify-content:center; margin-bottom: 8px; }
+    .brand-badge { display:inline-flex; align-items:center; justify-content:center; width:36px; height:36px; border-radius:8px; background: color-mix(in srgb, var(--color-accent), transparent 85%); color: var(--color-accent); font-weight:700; }
+    .brand-name { font-weight:700; letter-spacing:.2px; }
+    .illustration { margin-bottom: 10px; }
+    .illustration svg { width: clamp(56px, 12vw, 96px); height: auto; display:block; margin: 0 auto; }
+    .illustration path, .illustration line { stroke: var(--color-strong); stroke-width: 2.5; stroke-linecap: round; stroke-linejoin: round; fill: none; }
+    .offline h1 { font-size: clamp(1.6rem, 4vw, 2rem); margin: 6px 0 6px; }
+    .offline p { color: var(--color-muted); margin: 0 0 18px; }
+    .tips { color: var(--color-muted); font-size: .95rem; margin-top: 8px; }
+    .actions { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; margin-top: 14px; }
+    .actions button { text-decoration: none; }
+  </style>
+  <meta name="color-scheme" content="light dark" />
+</head>
+<body>
+  <main class="offline content-box" aria-labelledby="title-offline" role="status">
+    <div class="brand" aria-hidden="true">
+      <span class="brand-badge">PDT</span>
+      <span class="brand-name">Prise de décision technique</span>
+    </div>
+    <div class="illustration" aria-hidden="true">
+      <svg viewBox="0 0 64 64" role="img" focusable="false" aria-hidden="true">
+        <!-- Cloud shape -->
+        <path d="M22 46h22c6 0 11-5 11-11s-5-11-11-11h-1.2C41 16 36 12 30 12c-7.2 0-13 5.8-13 13 0 .4 0 .8.1 1.2H16c-4.4 0-8 3.6-8 8s3.6 11 14 11z" />
+        <!-- Slash -->
+        <line x1="12" y1="52" x2="52" y2="12" />
+      </svg>
+    </div>
+    <h1 id="title-offline">Vous êtes hors ligne</h1>
+    <p>Pas d’inquiétude, vous pouvez continuer à consulter la présentation. Certaines ressources peuvent ne pas être à jour.</p>
+    <div class="actions" role="group" aria-label="Actions hors ligne">
+      <button type="button" onclick="location.reload()">Réessayer</button>
+      <button type="button" onclick="location.href='./index.html'">Aller à l’accueil</button>
+    </div>
+    <p class="tips">Astuce: dès que la connexion revient, réessayez pour récupérer la dernière version.</p>
+  </main>
+</body>
+</html>
